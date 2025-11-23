@@ -14,10 +14,10 @@ class Brand(models.Model):
         return self.name
 
 class Items(models.Model):
-    name = models.CharField(max_length=200),
+    name = models.CharField(max_length=200)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='items')
     brand = models.ForeignKey(Brand,on_delete=models.CASCADE, related_name='items')
-    quantity = models.IntegerField(),
+    quantity = models.IntegerField()
     price = models.IntegerField()
 
     def __str__(self):
